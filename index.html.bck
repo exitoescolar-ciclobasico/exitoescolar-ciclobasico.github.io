@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Indicadores de Éxito Escolar</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h4>Indicadores de Éxito Escolar</h4>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#individualesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Indicadores individuales </a>
+                    <ul class="collapse list-unstyled" id="individualesSubmenu">
+                        <!--INDICADORES INDIVIDUALES-->
+                        <li>
+                            <a href="#" onclick="changeInforme('Matrícula escolar y tasa bruta')">Matrícula escolar y tasa bruta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Matrícula escolar y tasa neta')">Matrícula escolar y tasa neta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Sobreedad')">Sobreedad</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Transición general')">Transición general</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Eficiencia interna')">Eficiencia interna</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Transición específica')">Transición específica</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#brechasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Indicadores de Brechas </a>
+                    <ul class="collapse list-unstyled" id="brechasSubmenu">
+                        <!--INDICADORES DE BRECHAS-->
+                        <li>
+                            <a href="#" onclick="changeInforme('Matrícula escolar y tasa bruta brechas')">Matrícula escolar y tasa bruta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Matrícula escolar y tasa neta brechas')">Matrícula escolar y tasa neta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('IPG')">IPG</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Transición general brechas')">Transición general</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeInforme('Eficiencia interna brechas')">Eficiencia interna</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#externosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Indicadores de archivos externos</a>
+                    <ul class="collapse list-unstyled" id="externosSubmenu">
+                        <!--INDICADORES DE ARCHIVOS EXTERNOS-->
+                        <li>
+                            <a href="#" onclick="changeInforme('Calidad de evaluaciones')">Calidad de evaluaciones</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+                	<img src="img/banner.png" height="100px" width="1200px">
+
+
+
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+					<h3 id="tituloInforme"></h3>
+				</div>
+			</nav>
+            
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                	<div class="row">
+                		<div class="col">
+		                    <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm">
+		                        <i class="fas fa-align-left"></i>
+		                        <span>Más indicadores</span>
+		                    </button>
+                		</div>
+                		<div class="col">
+		                    <div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="departamentoMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    			Departamento
+								</button>
+								<div class="dropdown-menu" aria-labelledby="departamentoMenuButton" id="departamentoChoices">
+					  			
+					  			</div>
+							</div>
+                		</div>
+                		<div class="col">
+		                    <div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="municipioMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    			Municipio
+								</button>
+								<div class="dropdown-menu" aria-labelledby="municipioMenuButton" id="municipioChoices">
+
+					  			</div>
+							</div>
+                		</div>
+                		
+                		<div class="col">
+		                    	<button class="btn btn-sm" type="button" id="mostrar" onclick="mostrar()">
+					    			Mostrar
+								</button>
+                		</div>
+                		
+
+                	</div>
+                	<br>
+
+                </div>
+            </nav>
+
+            <div class="embed-responsive embed-responsive-16by9">
+			  <iframe class="embed-responsive-item" id="informe"  allowfullscreen></iframe>
+			</div>
+
+
+ 
+ 
+        </div>
+    </div>
+
+
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+
+    <script type="text/javascript">
+    	var departamento='TODOS';
+    	var municipio='TODOS';
+    	var urlbase='';
+    	var titulo = "";
+
+    	var deptosArray = ['ALTA VERAPAZ','BAJA VERAPAZ','CHIMALTENANGO','CHIQUIMULA','EL PROGRESO','ESCUINTLA','GUATEMALA','HUEHUETENANGO','IZABAL','JALAPA','JUTIAPA','PETEN','QUETZALTENANGO','QUICHE','RETALHULEU','SACATEPEQUEZ','SAN MARCOS','SANTA ROSA','SOLOLA','SUCHITEPEQUEZ','TOTONICAPAN','ZACAPA'];
+    	
+    	var munisArray={};
+    	var informesArray={};
+    	
+
+    	
+    	function setDepto(depto){
+    		document.getElementById('departamentoMenuButton').innerHTML=depto;
+    		departamento=depto;
+
+    		var municipios = document.getElementById('municipioChoices');
+    		var elementos = "";
+    		elementos+="<a class='dropdown-item' onclick=\"setMun('TODOS')\" href='#'>TODOS</a>";
+    		if(depto!="TODOS"){
+    			munisArray[depto].forEach( function(depto, indice, array) {
+					elementos+="<a class='dropdown-item' onclick=\"setMun('"+depto+"')\" href='#'>"+depto+"</a>";
+				});
+    		}
+
+    		municipios.innerHTML = elementos;
+
+    		document.getElementById('municipioMenuButton').innerHTML="Municipio";
+    	}
+
+    	function setMun(mun){
+    		document.getElementById('municipioMenuButton').innerHTML=mun;
+    		municipio=mun;
+    	}
+
+    	function changeInforme(informe){
+    		document.getElementById('tituloInforme').innerHTML=informe;
+    		departamento="TODOS";
+    		municipio="TODOS";
+    		var id = informesArray[informe];
+    		urlbase = "http://pisi.mineduc.gob.gt:8080/BOE/OpenDocument/1802161300/OpenDocument/opendoc/view.jsp?id="+id+"&p=$lsMAnio=2020";
+    		mostrar();
+    	}
+    	
+    	function mostrar(){
+    		var urlFiltros="";
+    		if(departamento=="TODOS" && municipio=="TODOS"){
+    			var deptoTodos ="";
+    			var municipioTodos ="";
+    			deptosArray.forEach( function(depto, indice, array) {
+					deptoTodos+=";"+depto;
+					munisArray[depto].forEach( function(muni, indice, array) {
+						municipioTodos+=";"+muni;
+					});
+				});
+    			deptoTodos= deptoTodos.slice(1); 
+    			municipioTodos = municipioTodos.slice(1); 
+    			urlFiltros= urlbase+"$lsMDepartamento="+deptoTodos+"$lsMMunicipio="+municipioTodos;
+    		}else if (departamento!="TODOS" && municipio=="TODOS"){
+				var municipioTodos ="";
+				munisArray[departamento].forEach( function(muni, indice, array) {
+					municipioTodos+=";"+muni;
+				});
+    			municipioTodos = municipioTodos.slice(1); 
+    			urlFiltros= urlbase+"$lsMDepartamento="+departamento+"$lsMMunicipio="+municipioTodos;
+    		}else {
+    			urlFiltros= urlbase+"$lsMDepartamento="+departamento+"$lsMMunicipio="+municipio;
+    		}
+
+    		var url = encodeURI(urlFiltros);
+    		document.getElementById('informe').src=url;
+    		//alert(url);
+    		console.log(url);
+
+    	}
+    	function llenarInformeTitulo(){
+    		//individuales
+    		informesArray['Matrícula escolar y tasa bruta']='AZBwJjRDNxtOo1DThwXzU9Q';
+            informesArray['Matrícula escolar y tasa neta']='AYd.NB.g3sJEnanmp07DqkY';
+            informesArray['Sobreedad']='AXH6vyQAsNFIpoPDZ7f_ctQ';
+            informesArray['Transición general']='AfCFbLNQA35OoSE6.w5dbJ0';
+            informesArray['Eficiencia interna']='AdqtecQ09sFPkmQc3BPx8jc';
+            informesArray['Transición específica']='AZx0U9rcVJFPnuYERMSYzvE';
+
+            //brechas
+            informesArray['Matrícula escolar y tasa bruta brechas']='AfOuYdCjfSxIibH.Yj9PPGY';
+            informesArray['Matrícula escolar y tasa neta brechas']='Ac3kf.8hG7pEqCQ4NACONIY';
+            informesArray['IPG']='AfirBCa2OUFGpVm8fNSPU1c';
+            informesArray['Transición general brechas']='ARH5geWfGH1BqGQKOQOhBKA';
+            informesArray['Eficiencia interna brechas']='AZOVlmJjRaNNmmZxbGQmNEM';
+    		
+            //externos
+    		informesArray['Calidad de evaluaciones']='AaKZ.8a4NoJAiYv9pP7JU6o';
+    		
+            //evaluaciones 3ro básico
+    		informesArray['Tablero DIGEDUCA']='Afk0n.TjBHJLiHBSrc5EL28';
+			
+
+
+
+    	}
+
+    	function llenarMunisArray(){
+    		munisArray['ALTA VERAPAZ']=['CHAHAL','CHISEC','COBAN','FRAY BARTOLOME DE LAS CASAS','LANQUIN','LA TINTA','PANZOS','RAXRUHA','SAN CRISTOBAL VERAPAZ','SAN JUAN CHAMELCO','SAN MIGUEL TUCURU','SAN PEDRO CARCHA','SANTA CRUZ VERAPAZ','SANTA MARIA CAHABON','SENAHU','TACTIC','TAMAHU'];
+			munisArray['BAJA VERAPAZ']=['CUBULCO','GRANADOS','PURULHA','RABINAL','SALAMA','SAN JERONIMO','SAN MIGUEL CHICAJ','SANTA CRUZ EL CHOL'];
+			munisArray['CHIMALTENANGO']=['ACATENANGO','CHIMALTENANGO','EL TEJAR','PARRAMOS','PATZICIA','PATZUN','SAN ANDRES ITZAPA','SAN JOSE POAQUIL','SAN JUAN COMALAPA','SAN MARTIN JILOTEPEQUE','SAN MIGUEL POCHUTA','SAN PEDRO YEPOCAPA','SANTA APOLONIA','SANTA CRUZ BALANYA','TECPAN GUATEMALA','ZARAGOZA'];
+			munisArray['CHIQUIMULA']=['CAMOTAN','CHIQUIMULA','CONCEPCION LAS MINAS','ESQUIPULAS','IPALA','JOCOTAN','OLOPA','QUEZALTEPEQUE','SAN JACINTO','SAN JOSE LA ARADA','SAN JUAN ERMITA'];
+			munisArray['EL PROGRESO']=['EL JICARO','GUASTATOYA','MORAZAN','SAN AGUSTIN ACASAGUASTLAN','SAN ANTONIO LA PAZ','SANARATE','SAN CRISTOBAL ACASAGUASTLAN','SANSARE'];
+			munisArray['ESCUINTLA']=['ESCUINTLA','GUANAGAZAPA','IZTAPA','LA DEMOCRACIA','LA GOMERA','MASAGUA','NUEVA CONCEPCION','PALIN','SAN JOSE','SANTA LUCIA COTZUMALGUAPA','SAN VICENTE PACAYA','SIPACATE','SIQUINALA','TIQUISATE'];
+			munisArray['GUATEMALA']=['AMATITLAN','CHINAUTLA','CHUARRANCHO','FRAIJANES','GUATEMALA','MIXCO','PALENCIA','SAN JOSE DEL GOLFO','SAN JOSE PINULA','SAN JUAN SACATEPEQUEZ','SAN MIGUEL PETAPA','SAN PEDRO AYAMPUC','SAN PEDRO SACATEPEQUEZ','SAN RAYMUNDO','SANTA CATARINA PINULA','VILLA CANALES','VILLA NUEVA'];
+			munisArray['HUEHUETENANGO']=['AGUACATAN','CHIANTLA','COLOTENANGO','CONCEPCION HUISTA','CUILCO','HUEHUETENANGO','JACALTENANGO','LA DEMOCRACIA','LA LIBERTAD','MALACATANCITO','NENTON','PETATAN','SAN ANTONIO HUISTA','SAN GASPAR IXCHIL','SAN ILDEFONSO IXTAHUACAN','SAN JUAN ATITAN','SAN JUAN IXCOY','SAN MATEO IXTATAN','SAN MIGUEL ACATAN','SAN PEDRO NECTA','SAN PEDRO SOLOMA','SAN RAFAEL LA INDEPENDENCIA','SAN RAFAEL PETZAL','SAN SEBASTIAN COATAN','SAN SEBASTIAN HUEHUETENANGO','SANTA ANA HUISTA','SANTA BARBARA','SANTA CRUZ BARILLAS','SANTA EULALIA','SANTIAGO CHIMALTENANGO','TECTITAN','TODOS SANTOS CUCHUMATAN','UNION CANTINIL'];
+			munisArray['IZABAL']=['EL ESTOR','LIVINGSTON','LOS AMATES','MORALES','PUERTO BARRIOS'];
+			munisArray['JALAPA']=['JALAPA','MATAQUESCUINTLA','MONJAS','SAN CARLOS ALZATATE','SAN LUIS JILOTEPEQUE','SAN MANUEL CHAPARRON','SAN PEDRO PINULA'];
+			munisArray['JUTIAPA']=['AGUA BLANCA','ASUNCION MITA','ATESCATEMPA','COMAPA','CONGUACO','EL ADELANTO','EL PROGRESO','JALPATAGUA','JEREZ','JUTIAPA','MOYUTA','PASACO','QUESADA','SAN JOSE ACATEMPA','SANTA CATARINA MITA','YUPILTEPEQUE','ZAPOTITLAN'];
+			munisArray['PETEN']=['DOLORES','EL CHAL','FLORES','LA LIBERTAD','LAS CRUCES','MELCHOR DE MENCOS','POPTUN','SAN ANDRES','SAN BENITO','SAN FRANCISCO','SAN JOSE','SAN LUIS','SANTA ANA','SAYAXCHE'];
+			munisArray['QUETZALTENANGO']=['ALMOLONGA','CABRICAN','CAJOLA','CANTEL','COATEPEQUE','COLOMBA COSTA CUCA','CONCEPCION CHIQUIRICHAPA','EL PALMAR','FLORES COSTA CUCA','GENOVA COSTA CUCA','HUITAN','LA ESPERANZA','OLINTEPEQUE','PALESTINA DE LOS ALTOS','QUETZALTENANGO','SALCAJA','SAN CARLOS SIJA','SAN FRANCISCO LA UNION','SAN JUAN OSTUNCALCO','SAN MARTIN SACATEPEQUEZ','SAN MATEO','SAN MIGUEL SIGUILA','SIBILIA','ZUNIL'];
+			munisArray['QUICHE']=['CANILLA','CHAJUL','CHICAMAN','CHICHE','CHINIQUE','CUNEN','IXCAN','JOYABAJ','NEBAJ','PACHALUN','PATZITE','PLAYA GRANDE','SACAPULAS','SAN ANDRES SAJCABAJA','SAN ANTONIO ILOTENANGO','SAN BARTOLOME JOCOTENANGO','SAN JUAN COTZAL','SAN MIGUEL USPANTAN','SAN PEDRO JOCOPILAS','SANTA CRUZ DEL QUICHE','SANTO TOMAS CHICHICASTENANGO','ZACUALPA'];
+			munisArray['RETALHULEU']=['CHAMPERICO','EL ASINTAL','NUEVO SAN CARLOS','RETALHULEU','SAN ANDRES VILLA SECA','SAN FELIPE','SAN MARTIN ZAPOTITLAN','SAN SEBASTIAN','SANTA CRUZ MULUA'];
+			munisArray['SACATEPEQUEZ']=['ALOTENANGO','ANTIGUA GUATEMALA','CIUDAD VIEJA','JOCOTENANGO','MAGDALENA MILPAS ALTAS','PASTORES','SAN ANTONIO AGUAS CALIENTES','SAN BARTOLOME MILPAS ALTAS','SAN LUCAS SACATEPEQUEZ','SAN MIGUEL DUENAS','SANTA CATARINA BARAHONA','SANTA LUCIA MILPAS ALTAS','SANTA MARIA DE JESUS','SANTIAGO SACATEPEQUEZ','SANTO DOMINGO XENACOJ','SUMPANGO'];
+			munisArray['SAN MARCOS']=['AYUTLA','CATARINA','COMITANCILLO','CONCEPCION TUTUAPA','EL QUETZAL','EL TUMBADOR','ESQUIPULAS PALO GORDO','IXCHIGUAN','LA BLANCA','LA REFORMA','MALACATAN','NUEVO PROGRESO','OCOS','PAJAPITA','RIO BLANCO','SAN ANTONIO SACATEPEQUEZ','SAN CRISTOBAL CUCHO','SAN JOSE EL RODEO','SAN JOSE OJETENAM','SAN LORENZO','SAN MARCOS','SAN MIGUEL IXTAHUACAN','SAN PABLO','SAN PEDRO SACATEPEQUEZ','SAN RAFAEL PIE DE LA CUESTA','SIBINAL','SIPACAPA','TACANA','TAJUMULCO','TEJUTLA'];
+			munisArray['SANTA ROSA']=['BARBERENA','CASILLAS','CHIQUIMULILLA','CUILAPA','GUAZACAPAN','NUEVA SANTA ROSA','ORATORIO','PUEBLO NUEVO VIÑAS','SAN JUAN TECUACO','SAN RAFAEL LAS FLORES','SANTA CRUZ NARANJO','SANTA MARIA IXHUATAN','SANTA ROSA DE LIMA','TAXISCO'];
+			munisArray['SOLOLA']=['CONCEPCION','NAHUALA','PANAJACHEL','SAN ANDRES SEMETABAJ','SAN ANTONIO PALOPO','SAN JOSE CHACAYA','SAN JUAN LA LAGUNA','SAN LUCAS TOLIMAN','SAN MARCOS LA LAGUNA','SAN PABLO LA LAGUNA','SAN PEDRO LA LAGUNA','SANTA CATARINA IXTAHUACAN','SANTA CATARINA PALOPO','SANTA CLARA LA LAGUNA','SANTA CRUZ LA LAGUNA','SANTA LUCIA UTATLAN','SANTA MARIA VISITACION','SANTIAGO ATITLAN','SOLOLA'];
+			munisArray['SUCHITEPEQUEZ']=['CHICACAO','CUYOTENANGO','MAZATENANGO','PATULUL','PUEBLO NUEVO','RIO BRAVO','SAMAYAC','SAN ANTONIO SUCHITEPEQUEZ','SAN BERNARDINO','SAN FRANCISCO ZAPOTITLAN','SAN GABRIEL','SAN JOSE EL IDOLO','SAN JOSE LA MAQUINA','SAN JUAN BAUTISTA','SAN LORENZO','SAN MIGUEL PANAM','SAN PABLO JOCOPILAS','SANTA BARBARA','SANTO DOMINGO SUCHITEPEQUEZ','SANTO TOMAS LA UNION','ZUNILITO'];
+			munisArray['TOTONICAPAN']=['MOMOSTENANGO','SAN ANDRES XECUL','SAN BARTOLO AGUAS CALIENTES','SAN CRISTOBAL TOTONICAPAN','SAN FRANCISCO EL ALTO','SANTA LUCIA LA REFORMA','SANTA MARIA CHIQUIMULA','TOTONICAPAN'];
+			munisArray['ZACAPA']=['CABAÑAS','ESTANZUELA','GUALAN','HUITE','LA UNION','RIO HONDO','SAN DIEGO','SAN JORGE','TECULUTAN','USUMATLAN','ZACAPA',];
+    	}
+    </script>
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+
+            var elementos ="";
+            var deptoChoices = document.getElementById('departamentoChoices');
+            elementos+="<a class='dropdown-item' onclick=\"setDepto('TODOS')\" href='#'>TODOS</a>";
+
+            deptosArray.forEach( function(depto, indice, array) {
+				elementos+="<a class='dropdown-item' onclick=\"setDepto('"+depto+"')\" href='#'>"+depto+"</a>";
+			});
+
+            deptoChoices.innerHTML = elementos;
+            llenarMunisArray();
+            llenarInformeTitulo();
+
+
+
+            document.getElementById('tituloInforme').innerHTML=titulo;
+            
+            departamento="TODOS";
+            municipio="TODOS";
+
+            changeInforme('Matrícula escolar y tasa bruta');
+            //mostrar();
+
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

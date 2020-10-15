@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Indicadores de Éxito Escolar</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h4>Indicadores de Éxito Escolar</h4>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <!--0. Introducción-->
+                    <a href="#" onclick="clickInforme('Informe anual de exito escolar')">Informe anual de exito escolar</a>
+                </li>
+                <li class="active">
+                    <!--1. Provisión ODAS Ciclo Básico-->
+                    <a href="#odasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">1. Provisión ODAS Ciclo Básico</a>
+                    <ul class="collapse list-unstyled" id="odasSubmenu">
+                        <li class="active">
+                            <!--1. Provisión ODAS Ciclo Básico-->
+                            <a href="#oda1Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">1.1 Docentes que dominan lo que enseñan</a>
+                            <ul class="collapse list-unstyled" id="oda1Submenu">
+                                <li>
+                                    <a href="#" onclick="clickInforme('1.1.1 Titulos del docente')">1.1.1 Titulos del docente</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="clickInforme('1.1.2 Docentes que dominan lo que enseñan')">1.1.2 Docentes que dominan lo que enseñan</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick="clickInforme('1.2 Directores líderes de centros educativos')">1.2 Directores líderes de centros educativos</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('1.3 Currículo de calidad')">1.3 Currículo de calidad</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('1.4 Al menos 850 horas efectivas de clase')">1.4 Al menos 850 horas efectivas de clase</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('1.5 Libros y recursos educativos para estudiantes y docentes')">1.5 Libros y recursos educativos para estudiantes y docentes</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('1.6 Centros educativos en buen estado y con mobiliario adecuado')">1.6 Centros educativos en buen estado y con mobiliario adecuado</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('1.7 Acceso a un centro educativo para Todas y Todos')">1.7 Acceso a un centro educativo para Todas y Todos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <!--2. Tiempo efectivo de clase en el Ciclo Básico-->
+                    <a href="#" onclick="clickInforme('2. Tiempo efectivo de clase en el Ciclo Básico')">2. Tiempo efectivo de clase en el Ciclo Básico</a>
+                </li>
+
+                <li class="active">
+                    <!--INDICADORES DE CALIDAD-->
+                    <a href="#calidadSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">3. Estado y Tendencias de los Principales Indicadores de Calidad</a>
+                    <ul class="collapse list-unstyled" id="calidadSubmenu">
+                        <li>
+                            <a href="#" onclick="clickInforme('3.1 Matrícula y cobertura bruta')">3.1 Matrícula y cobertura bruta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.2 Matrícula y cobertura neta')">3.2 Matrícula y cobertura neta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.3 Tasa de transición general de primaria a básico')">3.3 Tasa de transición general de primaria a básico</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.4 Tasa de transición específica de primaria a básico')">3.4 Tasa de transición específica de primaria a básico</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.5 Tasa de promoción y eficiencia interna')">3.5 Tasa de promoción y eficiencia interna</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.6 Logros de aprendizaje')">3.6 Logros de aprendizaje</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.7 Inversión')">3.7 Inversión</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('3.8 Comparación Internacional')">3.9 Comparación Internacional</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <!--INDICADORES DE BRECHAS-->
+                    <a href="#brechasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">4. Evaluación de las brechas de equidad</a>
+                    <ul class="collapse list-unstyled" id="brechasSubmenu">
+                        <li>
+                            <a href="#" onclick="clickInforme('4.1 Matrícula y cobertura bruta')">4.1 Matrícula y cobertura bruta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('4.2 Matrícula y cobertura neta')">4.2 Matrícula y cobertura neta</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('4.3 Tasa de transición general de primaria a básico')">4.3 Tasa de transición general de primaria a básico</a>
+                        </li>
+                        
+                        <li class="active">
+                            <!--4.4 Tasa de promoción y eficiencia interna-->
+                            <a href="#eficienciaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">4.4 Tasa de promoción y eficiencia interna</a>
+                            <ul class="collapse list-unstyled" id="eficienciaSubmenu">
+                                <li>
+                                    <a href="#" onclick="clickInforme('4.4.1 Tasa de promoción y eficiencia interna')">4.4.1 Tasa de promoción y eficiencia interna</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="clickInforme('4.4.2 Tasa de promoción y eficiencia interna por sector')">4.4.2 Tasa de promoción y eficiencia interna por sector</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" onclick="clickInforme('4.5 Logros de aprendizaje')">4.5 Logros de aprendizaje</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('4.6 Inversión por brechas')">4.6 Inversión por brechas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <!--INDICADORES DE RECURSOS-->
+                    <a href="#recursosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">5. Recursos financieros para cerrar brechas</a>
+                    <ul class="collapse list-unstyled" id="recursosSubmenu">
+                        <li>
+                            <a href="#" onclick="clickInforme('5.1 Costo financiero ODA1')">5.1 Costo financiero ODA1</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('5.2 Costo financiero ODA2')">5.2 Costo financiero ODA2</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('5.3 Costo financiero ODA3')">5.3 Costo financiero ODA3</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('5.4 Costo financiero ODA4')">5.4 Costo financiero ODA4</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('5.5 Costo financiero ODA5')">5.5 Costo financiero ODA5</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('5.6 Costo financiero ODA6')">5.6 Costo financiero ODA6</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="clickInforme('5.7 Costo financiero ODA7')">5.7 Costo financiero ODA7</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+           <img src="img/banner.png" height="100px" width="1200px">
+
+
+
+           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+               <h3 id="tituloInforme"></h3>
+           </div>
+       </nav>
+
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+           <div class="row">
+              <div class="col">
+                  <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm">
+                      <i class="fas fa-align-left"></i>
+                      <span>Más indicadores</span>
+                  </button>
+              </div>
+              <div class="col">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="departamentoMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Departamento
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="departamentoMenuButton" id="departamentoChoices">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="municipioMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Municipio
+                </button>
+                <div class="dropdown-menu" aria-labelledby="municipioMenuButton" id="municipioChoices">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col" id="anoContainer">
+
+        </div>
+
+        <div class="col">
+         <button class="btn btn-sm" type="button" id="mostrar" onclick="mostrar()">
+            Mostrar
+        </button>
+    </div>
+
+
+</div>
+<br>
+
+</div>
+</nav>
+
+<div class="embed-responsive embed-responsive-16by9">
+   <iframe class="embed-responsive-item" id="informe"  allowfullscreen></iframe>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- script.js -->
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
